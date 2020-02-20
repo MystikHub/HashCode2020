@@ -12,7 +12,5 @@ public class Library {
 			this.numberOfBooks = numOfBooks;
 			this.timeForSignUp = setupTime;
 			this.booksSent = bookSent;
-	}
-	
-	
+	}	
 }

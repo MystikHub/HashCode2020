@@ -5,4 +5,8 @@ public class Book {
 	public Book(int bookId) {
 		this.bookId = bookId;
 	}
+	
+	public String toString() {
+		return "Score: " + bookId;
+	}
 }
