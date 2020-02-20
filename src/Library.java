@@ -38,10 +38,6 @@ public class Library {
 		}
 		
 		// Sort all the libraries in order of earliest first
-		// First make a list of starting days (start + setup time)
-		int[] totalStartTimes = new int[allLibraries.size()];
-		for(int i = 0; i < allLibraries.size(); i++) {
-			
-		}
+		
 	}
 }

@@ -67,8 +67,6 @@ public class BookScanning {
 		// Problem logic
 		writeFile(allLibraries);
 		
-	
-		
 		bookScanner.close();
 		fileReader.close();
 	}
@@ -81,7 +79,8 @@ public class BookScanning {
 		BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(fos));
 		
 		Library.sortLibraries(allLibraries);
-		bw.write(allLibraries.size());// Writes Number of Library
+		bw.write(Integer.toString(allLibraries.size()));// Writes Number of Library
+		bw.flush();
 		System.out.println(allLibraries.size()+"\n");
 		bw.newLine();
 		int i = 0;
@@ -103,5 +102,7 @@ public class BookScanning {
 			
 		i++;	
 		}
+		
+		bw.flush();
 	}
 }
