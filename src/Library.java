@@ -24,19 +24,24 @@ public class Library {
 	
 	public static void sortLibraries(ArrayList<Library> allLibraries) {
 		// Sort the books in each library in descending order
-
 		Comparator comp = new Comparator<Book>() {
 		        @Override
 		        public int compare(Book book1, Book book2) {
-		            return -1 * Integer.compare(book1.bookId, book1.bookId);
+		        	// -1 so the order is from greatest to least
+		            return Integer.compare(book1.bookId, book1.bookId);
 		        }
 		    };
 		
 		for(int i = 0; i < allLibraries.size(); i++) {
 			Collections.sort(allLibraries.get(i).Library, comp);
+			Collections.reverse(allLibraries.get(i).Library);
 		}
 		
 		// Sort all the libraries in order of earliest first
-		
+		// First make a list of starting days (start + setup time)
+		int[] totalStartTimes = new int[allLibraries.size()];
+		for(int i = 0; i < allLibraries.size(); i++) {
+			
+		}
 	}
 }
