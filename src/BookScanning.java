@@ -7,7 +7,7 @@ public class BookScanning {
 
 	public static void main(String[] args) {
 		// Open the file
-		File dataset = new File("a_example.txt");
+		File dataset = new File("f_libraries_of_the_world.txt");
 		Scanner fileReader;
 		try {
 			fileReader = new Scanner(dataset);
@@ -35,8 +35,7 @@ public class BookScanning {
 			allBooks.add(newBook);
 		}
 		
-		// System.out.println("Books: " + allBooks.toString());
-		
+		// Read the library data into our java classes
 		Scanner libraryInfoScanner, libraryBookScanner;
 		ArrayList<Library> allLibraries = new ArrayList<Library>();
 		for(int i = 0; i < libraryCount; i++) {
@@ -61,6 +60,7 @@ public class BookScanning {
 		}
 		
 		// Problem logic
+		
 		
 		bookScanner.close();
 		fileReader.close();

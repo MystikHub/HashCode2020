@@ -1,4 +1,6 @@
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 
 
 public class Library {
@@ -16,5 +18,23 @@ public class Library {
 	
 	public String toString() {
 		return Library.toString();
+	}
+	
+	public static void sortLibraries(ArrayList<Library> allLibraries) {
+		// Sort the books in each library in descending order
+
+		Comparator comp = new Comparator<Book>() {
+		        @Override
+		        public int compare(Book book1, Book book2) {
+		            return -1 * Integer.compare(book1.bookId, book1.bookId);
+		        }
+		    };
+		
+		for(int i = 0; i < allLibraries.size(); i++) {
+			Collections.sort(allLibraries.get(i).Library, comp);
+		}
+		
+		// Sort all the libraries in order of earliest first
+		
 	}
 }
