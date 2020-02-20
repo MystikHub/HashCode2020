@@ -1,9 +1,8 @@
-package googleHashCode;
 import java.util.ArrayList;
 
 
 public class Library {
-	ArrayList<Books> Library = new ArrayList();
+	ArrayList<Book> Library = new ArrayList();
 	//int setupTime;
 	public int numberOfBooks;
 	public int timeForSignUp;		//time in days 
