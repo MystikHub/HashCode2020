@@ -11,14 +11,12 @@ public class BookScanning {
 
 	public static void main(String[] args) throws IOException {
 		// Open the file
-		File dataset = new File("a_example.txt");
+		File dataset = new File("b_read_on.txt");
 		Scanner fileReader;
 		try {
 			fileReader = new Scanner(dataset);
 		} catch (FileNotFoundException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
-			
 			return;
 		}
 		
@@ -57,7 +55,7 @@ public class BookScanning {
 			ArrayList<Book> libraryBooks = new ArrayList<Book>();
 			for(int j = 0; j < libraryBookCount; j++) {
 				int bookId = libraryBookScanner.nextInt();
-				Book newBook = new Book(allBooks.get(bookId).bookId);
+				Book newBook = new Book(bookId);
 				libraryBooks.add(newBook);
 			}
 			newLibrary.Library = libraryBooks;
