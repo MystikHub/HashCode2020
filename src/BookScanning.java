@@ -38,7 +38,7 @@ public class BookScanning {
 		// System.out.println("Books: " + allBooks.toString());
 		
 		Scanner libraryInfoScanner, libraryBookScanner;
-		ArrayList<Library> allLibraries= new ArrayList<Library>();
+		ArrayList<Library> allLibraries = new ArrayList<Library>();
 		for(int i = 0; i < libraryCount; i++) {
 			// Populate the libraries here
 			libraryInfoScanner = new Scanner(fileReader.nextLine());
@@ -49,6 +49,15 @@ public class BookScanning {
 			int libraryBooksShippablePerDay = libraryInfoScanner.nextInt();
 			
 			Library newLibrary = new Library(libraryBookCount, librarySignupDuration, libraryBooksShippablePerDay);
+			
+			ArrayList<Book> libraryBooks = new ArrayList<Book>();
+			for(int j = 0; j < libraryBookCount; j++) {
+				int bookId = libraryBookScanner.nextInt();
+				Book newBook = new Book(bookId);
+				libraryBooks.add(newBook);
+			}
+			newLibrary.Library = libraryBooks;
+			allLibraries.add(newLibrary);
 		}
 		
 		// Problem logic
