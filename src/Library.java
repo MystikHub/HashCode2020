@@ -24,7 +24,7 @@ public class Library {
 	
 	public static void sortLibraries(ArrayList<Library> allLibraries) {
 		// Sort the books in each library in descending order
-		Comparator comp = new Comparator<Book>() {
+		Comparator<Book> bookComp = new Comparator<Book>() {
 		        @Override
 		        public int compare(Book book1, Book book2) {
 		        	// -1 so the order is from greatest to least
@@ -33,11 +33,18 @@ public class Library {
 		    };
 		
 		for(int i = 0; i < allLibraries.size(); i++) {
-			Collections.sort(allLibraries.get(i).Library, comp);
+			Collections.sort(allLibraries.get(i).Library, bookComp);
 			Collections.reverse(allLibraries.get(i).Library);
 		}
 		
 		// Sort all the libraries in order of earliest first
-		
+		Comparator<Library> libraryComp = new Comparator<Library>() {
+		        @Override
+		        public int compare(Library library1, Library library2) {
+		        	// -1 so the order is from greatest to least
+		            return Integer.compare(library1.timeForSignUp, library2.timeForSignUp);
+		        }
+		    };
+		Collections.sort(allLibraries, libraryComp);
 	}
 }
